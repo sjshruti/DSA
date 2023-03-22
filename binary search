@@ -1,0 +1,34 @@
+#include<stdio.h>
+int main()
+{
+  int a[10],i,mid,size,ele,left,right;
+  printf("enter the number element\n");
+  scanf("%d",&size);
+  printf("eneter the elements\n");
+  for(i=0;i<size;i++)
+    {
+      scanf("%d",&a[i]);
+    }
+  printf("enter the element to be search\n");
+  scanf("%d",&ele);
+   left=0;
+  right=size-1;
+  while(left<right)
+    {
+      mid=(left+right)/2;
+      if(ele==a[mid])
+      {
+        printf("element found at position:\n%d",mid+1);
+        return 0;
+      }
+      else if(ele<a[mid])
+      {
+        right=mid-1;
+      }
+      else
+      {
+        left=mid+1;
+      }
+    }
+ printf("not found");
+}
